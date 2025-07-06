@@ -1,0 +1,503 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  color: #222;
+}
+
+/* Layout */
+.dashboard-section {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  /* margin-top: 250px; */
+}
+
+.dashboard-left-panel {
+  width: 250px;
+  background: #212b36;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.dashboard-right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Top panel */
+.dashboard-right-top-panel {
+  position: relative;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  padding: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dashboard-right-top-panel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(12px);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.dashboard-right-top-panel h3 {
+  position: relative;
+  z-index: 2;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow: none !important;
+
+}
+.dashboard-right-top-panel button{
+  border: none;
+  background: linear-gradient(135deg, rgb(36, 138, 255), skyblue);
+  border-radius: 15px;
+  width: 150px;
+  padding: 10px;
+  cursor: pointer;
+  border:1px solid #0288d1 ;
+  box-shadow: none !important;
+}
+/* Bottom content */
+.dashboard-right-bottom-panel {
+  flex: 1;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Sidebar */
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-top-panel {
+  padding: 1rem;
+  background: #263238;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar-top-panel-content h1 {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.sidebar-top-panel-content h4 {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.sidebar-bottom-panel-content ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.sidebar-bottom-panel-content li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.sidebar-bottom-panel-content li:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Co-Workers */
+.co-worker-section {
+  padding: 1rem;
+}
+
+.co-worker-section ul {
+  list-style: none;
+}
+
+.co-worker-detail {
+  display: flex;
+  justify-content: space-between;
+  background: #eef2f7;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.co-worker-detail button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Available Members Modal */
+.Available-memebers-div,
+.TaskDisplay-div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 700px;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 999;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.Available-memebers-div h3,
+.TaskDisplay-div h4 {
+  margin-bottom: 1rem;
+}
+.TaskDisplay-top-panel{
+  display: flex;
+  justify-content: space-between;
+}
+.TaskDisplay-top-panel button{
+  /* color: white; */
+  background-color: white;
+  border: none;
+  padding: 0;
+  /* margin-bottom: 5px; */
+  height: 20px;
+  cursor: pointer;
+}
+
+.left-part{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.left-part button{
+  margin-top: 3px;
+}
+.TaskDisplay-top-panel img{
+  height: 100%;
+  cursor: pointer;
+}
+
+.Available-memebers-div ul,
+.TaskDisplay-bottom-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Available-memebers-div li,
+.TaskDisplay-bottom-panel li {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  background: #f1f3f5;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+.TaskDisplay-list button,img{
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+.TaskDisplay-list{
+  display: flex;
+  justify-content: space-between;
+}
+.TaskDisplay-list .buttons{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.TaskDisplay-list .content{
+  max-width: 400px;
+  overflow-wrap: anywhere;
+}
+.TaskDisplay-list li{
+  height: 100%;
+}
+.TaskDisplay-list .buttons button{
+  margin: 0px 2px;
+}
+.add-new-task{
+  display: flex;
+  justify-content: space-between;
+}
+.add-new-task button,.mark-as-complete{
+  width: 50px;
+  border-radius: 10px;
+  color: white;
+  background-color: #0288d1;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+.mark-as-complete{
+  width: 100px;
+  height: 30px !important;
+}
+.mark-as-complete:hover{
+  background-color: #1976d2;
+}
+.add-new-task button:hover{
+  background-color: #1976d2;
+}
+.edit-input{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.edit-input input{
+  width: 400px;
+}
+.TeamCard-top-panel-right-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-bottom: 0;
+  padding: 0;
+  /* border: 1px solid; */
+}
+.TeamCard-top-panel-right-section button{
+  background-color: white !important;
+  align-self: flex-end;
+}
+.edit-input button{
+  width: 50px;
+  border-radius: 10px;
+  color: white;
+  background-color: #0288d1;
+  border: none;
+  /* padding: 10px; */
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+.edit-input button:hover{
+  background-color: #1976d2;
+}
+.Available-memebers-div button
+ {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Available-memebers-top-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  /* border: 1px solid; */
+}
+.Available-memebers-top-section button{
+  background-color: white;
+  margin: 0;
+  /* border: 1px solid black; */
+}
+.Available-memebers-top-section img{
+  margin: 0;
+  /* border: 1px solid; */
+}
+.Available-memebers-bottom-section{
+  display: flex;
+  flex-direction: column;
+}
+.Available-memebers-bottom-section li{
+  display: flex;
+  justify-content: space-between;
+}
+.Available-memebers-bottom-section li button{
+  align-items: center;
+  margin: 0;
+}
+.Available-memebers-bottom-section button{
+  align-self: flex-end;
+}
+/* Team Card */
+.TeamCard-div {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  margin: 1rem 0;
+  padding: 1rem;
+}
+.TeamCard-top-panel{
+  display: flex;
+  justify-content: space-between;
+}
+.TeamCard-top-panel h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+.TeamCard-top-panel p{
+  color: grey
+}
+.TeamCard-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+}
+
+.TeamCard-buttons button {
+  /* background: #0288d1 !important; */
+  background: linear-gradient(120deg, #0288d1, #2db2fa) !important;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.TeamCard-buttons button:hover{
+  background: #0d4883 !important;
+}
+/* Team Display */
+.TeamDisplay-section ul {
+  list-style: none;
+}
+
+.TeamDisplay-section button {
+  margin-top: 1rem;
+  background: #25998b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* User Task Display */
+.userTaskDisplay-section ul {
+  list-style: none;
+  padding: 1rem;
+
+}
+
+.userTaskDisplay-section li {
+  margin: 0.5rem 0;
+  background: #e3f2fd;
+  padding: 0.6rem;
+  border-radius: 6px;
+}
+.TeamCard-buttons button {
+  /* background: #0288d1 !important; */
+  background: linear-gradient(120deg, #0288d1, #2db2fa) ;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.TeamCard-buttons button:hover{
+  background: #0d4883 ;
+}
+.sidebar-top-panel{
+  display: flex;
+  justify-content: space-between;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-section {
+    flex-direction: column;
+  }
+
+  .dashboard-left-panel {
+    width: 100%;
+    z-index: 10;
+  }
+
+  .dashboard-right-panel {
+    padding: 0.5rem;
+    /* z-index: -100; */
+    position: absolute;
+    width: 100%;
+    top: 90px;
+  }
+
+  .dashboard-right-top-panel {
+    padding: 1rem;
+  }
+  .dashboard-right-panel{
+    height: 100%;
+  }
+  .Available-memebers-div,
+  .TaskDisplay-div {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+  }
+  /* .TeamCard-buttons button{
+    width: 100px !important;
+  } */
+  .sidebar-top-panel{
+    height: 90px;
+  }
+  .sidebar-top-panel button{
+    background-color: #263238;
+    cursor: pointer;
+    box-shadow: none;
+  }
+  .sidebar-bottom-panel{
+    z-index: 100;
+  }
+
+  .sidebar-bottom-panel-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .MemberPendingTaskDisplay-bottom-panel li{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .MemberPendingTaskDisplay-bottom-panel .buttons{
+    align-self: flex-end;
+    margin: 5px 0px;
+  }
+  .add-new-task{
+    display: flex;
+    flex-direction: column;
+  }
+  .add-new-task button{
+    align-self: flex-end;
+    margin: 5px 0px;
+  }
+  .edit-input{
+    display: flex;
+    flex-direction: column;
+  }
+  .edit-input button{
+    align-self: flex-end;
+    margin: 5px 0px;
+  }
+  .edit-input input{
+    width: 100%;
+  }
+}
