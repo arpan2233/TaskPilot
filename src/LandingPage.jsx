@@ -110,6 +110,7 @@ function LandingPage(){
         <a href="https://www.linkedin.com/in/arpan-rohilla-65991b256/">LinkedIn</a>
         <a style={{color: 'grey'}} href="https://github.com/arpan2233">GitHub</a>
       </div>
+        <p>The version is currently in testing mode, for the same reason organisation names in registration and login are hardcoded. For customisation and personalisation you may contact developer via LinkedIn</p>
     </section>
   </div>
 }
