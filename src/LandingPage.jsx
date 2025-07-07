@@ -112,10 +112,10 @@ function LandingPage(){
       </div>
         <p>Note!</p>
         <ul>
-            <li>The version is currently in testing mode, for the same reason organisation names in registration and login are hardcoded. 
+            <li style={{color: 'white'}}>The version is currently in testing mode, for the same reason organisation names in registration and login are hardcoded. 
             For customisation and personalisation you may contact developer via LinkedIn.</li>
-            <li>To make Team, members to be added must be registered</li>
-            <li>Manager has no task assigned and junior developer cannot make a team to guide, for the obvious reasons, yet both can add personal notes</li>
+            <li style={{color: 'white'}}>To make Team, members to be added must be registered</li>
+            <li style={{color: 'white'}}>Manager has no task assigned and junior developer cannot make a team to guide, for the obvious reasons, yet both can add personal notes</li>
         </ul>
 
     </section>
