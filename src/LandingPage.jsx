@@ -110,7 +110,14 @@ function LandingPage(){
         <a href="https://www.linkedin.com/in/arpan-rohilla-65991b256/">LinkedIn</a>
         <a style={{color: 'grey'}} href="https://github.com/arpan2233">GitHub</a>
       </div>
-        <p>The version is currently in testing mode, for the same reason organisation names in registration and login are hardcoded. For customisation and personalisation you may contact developer via LinkedIn</p>
+        <p>Note!</p>
+        <ul>
+            <li>The version is currently in testing mode, for the same reason organisation names in registration and login are hardcoded. 
+            For customisation and personalisation you may contact developer via LinkedIn.</li>
+            <li>To make Team, members to be added must be registered</li>
+            <li>Manager has no task assigned and junior developer cannot make a team to guide, for the obvious reasons, yet both can add personal notes</li>
+        </ul>
+
     </section>
   </div>
 }
