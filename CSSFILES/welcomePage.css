@@ -215,6 +215,9 @@ nav .leftsection img{
   text-align: center;
   height: 400px;
 }
+.footer ul{
+    text-align: none;
+}
 .footer p{
     color: white;
 }
@@ -285,6 +288,7 @@ nav .leftsection img{
     display: flex;
     gap: 1rem;
   }
+    
 }
 @media(max-width: 650px){
   .right-main-content{
