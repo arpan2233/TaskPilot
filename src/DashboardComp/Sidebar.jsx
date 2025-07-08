@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "../../CSSFILES/Sidebar.css"
 function Sidebar(props){
     const [showNav, setShowNav] = useState(false);
     return <section className="sidebar-section">
