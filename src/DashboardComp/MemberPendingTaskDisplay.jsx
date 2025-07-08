@@ -118,7 +118,6 @@ function MemberPendingTaskDisplay(props){
                                 })
                             }).then(res => res.json()).catch(err => console.error(err))
                             props.setMembersListTaskDisplay(prev => [...prev,{task_key: result[0].task_key, tasks: currentValue}]);
-                            // setEditedTask(prev => [...prev,{task_key: result[0].task_key, tasks: currentValue}]);
                             setEnterNewTask(false);
                             setAdded(prev => [...prev,{task_key: result[0].task_key, tasks: currentValue}])
                             }}>Save</button>
