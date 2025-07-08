@@ -62,18 +62,15 @@ function Dashboard(props){
             element.completed_task = [];
             element.pending_task = [];
         })
-        // console.log("nano");
         const mySet = new Set();
         users.forEach(e => mySet.add(e.uid));
         setAvailableMembers(prev => prev.filter(e => !mySet.has(e.uid)));
         setData(prev => [...prev,...users]);
-        // console.log("nano");
 
     }
     useEffect(()=>{
         async function loadData() {
         var local_co_workers = [], local_completed_task = [], local_pending_task = [], local_data = [];
-        console.log(props.ud.uid)
         try {
             const local_notes = await fetch("https://taskpilot-backend-7wni.onrender.com/getNotes", {
                 method: "post",
@@ -100,7 +97,6 @@ function Dashboard(props){
             }).then(res => res.json()).catch(err => console.log(err));
 
             setAvailableMembers(members);
-            console.log(members)
 
             const result = await fetch("https://taskpilot-backend-7wni.onrender.com/reportsTo", {
             method: "post",
@@ -113,7 +109,6 @@ function Dashboard(props){
 
             const arrayID = [];
             local_data = result;
-            // console.log(result);
             result.forEach(element => {
                 arrayID.push(element.uid);
             })
@@ -127,7 +122,6 @@ function Dashboard(props){
                     ids: arrayID,
                 })
             }).then(res=>res.json()).catch(err => console.error(err));
-            // console.log(reporters_completed_tasks);
             
             const reporters_pending_tasks = await fetch("https://taskpilot-backend-7wni.onrender.com/reportersPendingTask", {
                 method: "post",
@@ -216,8 +210,6 @@ function Dashboard(props){
         loadData();
     },[])
 
-    // console.log(data);
-    // console.log(completed_task);
     async function handle_Edit_Add_Delete(changed_uid, edit, add, del, status){
         var temp_data = data;
         var status_target = (status === "pending") ? "pending_task" : "completed_task";
