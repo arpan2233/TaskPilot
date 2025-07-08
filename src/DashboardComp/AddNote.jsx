@@ -5,12 +5,9 @@ function AddNote(props){
     // task_key -> note_key
     const [editedTask, setEditedTask] = useState([]);
     const [deleted, setDeleted] = useState([]);
-    // const [makeInput, setMakeInput] = useState(false); 
     const [currentValue,setCurrentValue] = useState("");
-    // const [added,setAdded] = useState([]);
     const [enterNewTask, setEnterNewTask] = useState(false);
     const [key, setKey] = useState(-1);
-    // const [completed,setCompleted] = useState([]);
 
     function handleSave(){
         if(editedTask.some(el => (el.note_key === key))){  
@@ -20,7 +17,6 @@ function AddNote(props){
         }
 
         setEditedTask(prev => [...prev,{note_key: key, notes: currentValue}]);
-        // setMakeInput(false);
         props.setNotes(prev => 
             prev.map(element => {
                 if(element.note_key === key){
@@ -34,11 +30,9 @@ function AddNote(props){
         setDeleted(prev => [...prev,k]);
         props.setNotes(prev => prev.filter(element => element.note_key !== k));
     }
-///
+
     async function handleCross(){
         if(editedTask.length > 0){
-            console.log("editedTasks");
-            console.log(editedTask);
             const result = await fetch("https://taskpilot-backend-7wni.onrender.com/editNotes", {
                 method: "post",
                 headers: {
@@ -67,7 +61,6 @@ function AddNote(props){
         setCurrentValue("");
         props.setShowNotes(false);
     }
-    console.log(props.notes);
     
     
     return <div className="TaskDisplay-div MemberPendingTaskDisplay-div">
@@ -102,7 +95,6 @@ function AddNote(props){
                             </div>
                             <div className="buttons">
                                 <button onClick={()=>{
-                                // setMakeInput(true);
                                 setCurrentValue(element.notes);
                                 setKey(element.note_key);
                                 }}>
