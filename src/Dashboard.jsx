@@ -283,7 +283,10 @@ function Dashboard(props){
         setAvailableMembers(prev => availableMembers.some(e => e.uid === element.uid) ? prev : [...prev,element]);
     }
     if(loading){
-        return <p>Loading</p>
+        return <div className="loading">
+            <div className="spinner"></div>
+            <p>Aww.. Don't Look At Me like That</p>
+        </div> 
     } 
     return <section className="dashboard-section">
         {/* Sidebar */}
