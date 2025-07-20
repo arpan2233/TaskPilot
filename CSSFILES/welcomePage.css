@@ -358,6 +358,15 @@ nav .leftsection img{
     align-self: flex-start;
     margin-left: 20px;
   }
+  .left-main-content .button{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .left-main-content .tryTaskPilot{
+    margin-top: 10px;
+    width: 100%;
+  }
   .about-grid{
     justify-content: center;
   }
