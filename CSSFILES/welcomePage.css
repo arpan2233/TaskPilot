@@ -356,7 +356,7 @@ nav .leftsection img{
   }
   .left-main-content{
     align-self: flex-start;
-    margin-left: 2rem;
+    margin-left: 20px;
   }
   .about-grid{
     justify-content: center;
