@@ -2,7 +2,7 @@ import React from "react";
 
 function CoWorkers(props){
 
-    // props: co_workers😭
+    // props: co_workers
 
     function handleClick(email){
         window.open(
@@ -10,7 +10,6 @@ function CoWorkers(props){
         '_blank' 
         )
     }
-    console.log(props)
     return <section className="co-worker-section">
         <h1>Co-Workers</h1>
         <ul>
@@ -27,14 +26,5 @@ function CoWorkers(props){
         </ul>
     </section>;
   };
-//   function CoWorkers(props){
-//     console.log(props);
-//     return <ul>
-//         <li>CoWorker</li>
-//         {/* <li>{props.co_workers[0].user_name}</li> */}
-//         {(props.co_workers).map((element)=>{
-//             return <li>{element.user_name}</li>
-//   })}
-//     </ul>
-//   }
+
 export default CoWorkers;

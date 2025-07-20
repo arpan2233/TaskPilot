@@ -11,7 +11,6 @@ function MemberCompletedTaskDisplay(props){
         props.handle_Edit_Add_Delete(props.uid,[],[],deleted, "completed");
         props.setDisplayTask(false);
     }
-    console.log(props.list);
     
     return <div className="MemberCompletedTaskDisplay-div TaskDisplay-div">
         <div className="MemberCompletedTaskDisplay-top-panel TaskDisplay-top-panel">

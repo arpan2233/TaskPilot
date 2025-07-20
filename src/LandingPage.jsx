@@ -151,6 +151,14 @@ function LandingPage(props){
         <a href="https://www.linkedin.com/in/arpan-rohilla-65991b256/">LinkedIn</a>
         <a style={{color: 'grey'}} href="https://github.com/arpan2233">GitHub</a>
       </div>
+        <p>Note!</p>
+        <ul>
+            <li style={{color: 'white'}}>The version is currently in testing mode, for the same reason organisation names in registration and login are hardcoded. 
+            For customisation and personalisation you may contact developer via LinkedIn.</li>
+            <li style={{color: 'white'}}>To make Team, members to be added must be registered</li>
+            <li style={{color: 'white'}}>Manager has no task assigned and junior developer cannot make a team to guide, for the obvious reasons, yet both can add personal notes</li>
+        </ul>
+
     </section>
     {redirect && <Navigate to={"/dashboard"} />}
   </div>

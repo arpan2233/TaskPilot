@@ -14,7 +14,6 @@ function LoginPage(props){
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const organisation = orgRef.current.value;
-        console.log(organisation);
         
         const result = await fetch("https://taskpilot-backend-7wni.onrender.com/login", {
             method: "post",
@@ -27,7 +26,6 @@ function LoginPage(props){
                 org_name: organisation
             })
         }).then(res => res.json());
-        console.log(result);
         
         if(result.length === 0) {
             setShowError(true);

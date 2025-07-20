@@ -1,6 +1,5 @@
 import React from "react";
 import TeamCard from "./TeamCard";
-// import "../../CSSFILES/TeamDisplay.css"
 function TeamDisplay(props) {
     // props : uid, setDetails(heading, list), data,setShowAvailable, reporterRemoved
     return <section className="TeamDisplay-section">

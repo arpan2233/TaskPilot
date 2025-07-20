@@ -284,13 +284,18 @@ nav .leftsection img{
   flex-direction: column;
   justify-content: space-evenly;
   padding: 2rem;
-  text-align: center;
-  height: 200px;
+  height: 400px;
 }
+
 .footer p{
+    align-self: center;
     color: white;
 }
+.socials{
+    align-self: center;
+}
 .socials a {
+    
   margin: 0 0.5rem;
   color: #6c63ff;
 }
@@ -389,6 +394,7 @@ nav .leftsection img{
     display: flex;
     gap: 1rem;
   }
+    
 }
 @media(max-width: 650px){
   .right-main-content{
