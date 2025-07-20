@@ -284,7 +284,7 @@ function Dashboard(props){
     }
     if(loading){
         return <div className="loading">
-            <div className="spinner"></div>
+            <div className="spinny"></div>
             <p>Aww.. Don't Look At Me like That</p>
         </div> 
     } 
