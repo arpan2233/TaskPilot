@@ -2,63 +2,79 @@
     padding: 0;
     width: 100%;
 }
-.tryTaskPilot{
+.button{
   display: flex;
-
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+.button .tryTaskPilot{
+  width: 250px;
+}
+/* .tryTaskPilot{
+  display: flex;
   flex-direction: column;
   background-color: #faf7f7;
   position: fixed;
   top: 90%;
   left: 90%;
-  /* right: 100%; */
   transform: translate(-50%,-50%);
   width: 220px;
   border-radius: 20px;
-}
-.taskpilotOpened{
-  box-shadow: 3px 3px 30px rgb(209, 209, 209);
+} */
+.taskpilotOptions{
+  border-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   position: absolute;
   bottom: 100%;
-  background-color: white;
+  /* background: linear-gradient(130deg, rgb(218, 218, 218), white); */
+  background-color: rgb(252, 252, 252);
+  width: 250px;
   padding: 10px;
+}
+.taskpilotOptions ul{
+  position: relative;
+  list-style: none;
+  /* margin-left: 20px; */
+}
+.taskpilotOptions ul li{
+  /* color: black; */
+  position: relative;
+  background-color: white;
   border-radius: 10px;
-  width: 100%;
+  /* width: 100%; */
+  padding: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  color: black;
+  z-index: 1;
+  transition: 0.5s;
 }
-.taskpilotOpened ul{
-  padding-left: 20px;
-  list-style:circle ;
-}
-
-.list-item::before{
+.taskpilotOptions li::before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
-  border-bottom-right-radius: 20px;
-  transition:width 0.5s ease;
-  height:100%;
-  background-color: #8380802a;
-  z-index: -1; 
-}
-.list-item:hover::before{
-  width: 100%;
-}
-.list-item{
-  padding: 10px;
-  position: relative;
-  width: 100%;
   height: 100%;
-  overflow: hidden;
-  background-color: #fff;
-  color: #000;
-  cursor: pointer;
+  background-color: #5549d5;
+  transition: 0.5s ease;
   z-index: 0;
 }
-/* .list-item:hover{
-  color: rgb(0, 0, 0);
-} */
+.taskpilotOptions li:hover::before{
+  width: 100%;
+  z-index: -1;
+}
+.taskpilotOptions li:hover{
+  color: white;
+}
 
+/* .taskpilotOptions ul li:hover {
+  background-color: #5549d5;
+  color: white;
+  bottom: 100%;
+} */
 .taskpilotCollapsed{
   display: flex;
   justify-content: space-evenly;
@@ -369,18 +385,7 @@ nav .leftsection img{
     position: relative;
     transform: none;
   }
-.taskpilotOpened{
-  position: absolute;
-  top: 100%;
-  /* bottom: auto; */
-  z-index: 20000;
-  height: 200px;
-  padding: 10px;
-}
-.taskpilotOpened ul{
-  height: 100%;
-  /* background-color: white; */
-}
+
    .about-item{
     width: 100%;
    }

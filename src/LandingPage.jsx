@@ -27,6 +27,7 @@ function LandingPage(props){
         }
       }
       setRedirect(true);
+      return;
     }
     return <div className="land-page">
       
@@ -73,13 +74,12 @@ function LandingPage(props){
           <a href="/login"><button className="cta-btn">Get Started</button></a>
           <div className="tryTaskPilot">
             {showOptions && 
-              <div className="taskpilotOpened">
-                <ul onClick={handleClick}> 
-                  {/* <p>As</p> */}
-                  <li className="list-item">Manager</li>
-                  <li className="list-item" >HR</li>
-                  <li className="list-item" >Senior Developer</li>
-                  <li className="list-item" >Junior Developer</li>
+              <div className="taskpilotOptions">
+                <ul onClick={handleClick}>
+                  <li>Manager</li>
+                  <li>HR</li>
+                  <li>Senior Developer</li>
+                  <li>Junior Developer</li>
                 </ul>
               </div>
             }
