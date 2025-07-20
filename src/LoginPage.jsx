@@ -6,8 +6,10 @@ function LoginPage(props){
     const emailRef = useRef();
     const passwordRef = useRef();
     const orgRef = useRef();
+    const [loadStart, setLoadStart] = useState(false);
     const [redirect, setRedirect] = useState(false);  
     async function handleSubmit(e){
+        setLoadStart(true);
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
@@ -38,6 +40,7 @@ function LoginPage(props){
     }
 
     return <section className="login-section">
+        {/* <div className="top-bar"></div> */}
         <div className="login-card">
             <div className="login-left">
                 <h2>Welcome Back</h2>
@@ -58,7 +61,9 @@ function LoginPage(props){
                     <input type="email" id="email" placeholder="you@example.com" name="email" ref={emailRef} required/>
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" placeholder="Enter Your Password" name="password" ref={passwordRef} required/>
-                    <button type="submit" className="login-button" >Login</button>
+                    <button type="submit" className="login-button" >
+                        {loadStart && <span><div className="spinner"></div></span>}
+                        Login</button>
                     {/* <div className="divider">or</div> */}
                     {/* <button type="button" className="google-login">Login with Google</button> */}
                 </form>

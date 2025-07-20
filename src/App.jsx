@@ -11,7 +11,7 @@ function App(){
     const [userdetails, setUserDetails] = useState({});
     return (<BrowserRouter>
         <Routes>
-            <Route path="/" element={<LandingPage/>} />
+            <Route path="/" element={<LandingPage setUserDetails={setUserDetails}/>} />
             <Route path="/login" element={<LoginPage getDetails={setUserDetails}/>} />
             <Route path="/register" element={<Register getDetails={setUserDetails}/>} />
             <Route element={<ProtectedRoutes uid={userdetails.uid}/>}>

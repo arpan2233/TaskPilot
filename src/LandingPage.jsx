@@ -2,15 +2,34 @@ import React, { useState } from "react";
 import {useMediaQuery} from 'react-responsive'
 import samplevideo from "../resourses/TaskPilot_walkThrough.mp4"
 import "../CSSFILES/welcomePage.css"
-function LandingPage(){
+import { Navigate } from "react-router-dom";
+function LandingPage(props){
     const [showAnswer1, setShowAnswer1] = useState(false);
     const [showAnswer2, setShowAnswer2] = useState(false);
     const [showAnswer3, setShowAnswer3] = useState(false);
     const [isShown, setShown] = useState(false);
+    const [showOptions, setShowOptions] = useState(false);
+    const [redirect, setRedirect] = useState(false);
     const isDesktop = useMediaQuery({
         query: '(min-width: 768px)',
     });
+    function handleClick(e){
+      const item = e.target.closest("li");
+      if(item){
+        if(item.textContent == "Manager"){
+          props.setUserDetails(JSON.parse(import.meta.env.VITE_MANAGER));
+        }else if(item.textContent == "HR"){
+          props.setUserDetails(JSON.parse(import.meta.env.VITE_HR));
+        }else if(item.textContent == "Senior Developer"){
+          props.setUserDetails(JSON.parse(import.meta.env.VITE_SENIOR_DEVELOPER));
+        } else{
+          props.setUserDetails(JSON.parse(import.meta.env.VITE_JUNIOR_DEVELOPER));
+        }
+      }
+      setRedirect(true);
+    }
     return <div className="land-page">
+      
     <nav>
       <div className="leftsection">
         {/* <video src={samplevideo} width={600}></video> */}
@@ -39,6 +58,7 @@ function LandingPage(){
       
       
     </nav>
+      
     {(!isDesktop && isShown)  && <div className="mobilenav">
         <a href="#about">About</a>
           <a href="#contact">Contact</a>
@@ -49,7 +69,28 @@ function LandingPage(){
       <div className="left-main-content">
         <h1><span className="highlight">TaskPilot</span></h1>
         <p>Smart task management for teams to assign, manage, and complete tasks with ease.</p>
-        <a href="/login"><button className="cta-btn">Get Started</button></a>
+        <div className="button">
+          <a href="/login"><button className="cta-btn">Get Started</button></a>
+          <div className="tryTaskPilot">
+            {showOptions && 
+              <div className="taskpilotOpened">
+                <ul onClick={handleClick}> 
+                  {/* <p>As</p> */}
+                  <li className="list-item">Manager</li>
+                  <li className="list-item" >HR</li>
+                  <li className="list-item" >Senior Developer</li>
+                  <li className="list-item" >Junior Developer</li>
+                </ul>
+              </div>
+            }
+            <div className="taskpilotCollapsed">
+              <h3>Try TaskPilot As</h3>
+              <img src="https://www.svgrepo.com/show/124304/three-dots.svg" alt="Options" onClick={() => {
+                showOptions ? setShowOptions(false) : setShowOptions(true);
+              }}/>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="right-main-content">
         <div className="enclosing-div">
@@ -111,6 +152,7 @@ function LandingPage(){
         <a style={{color: 'grey'}} href="https://github.com/arpan2233">GitHub</a>
       </div>
     </section>
+    {redirect && <Navigate to={"/dashboard"} />}
   </div>
 }
 export default LandingPage;
